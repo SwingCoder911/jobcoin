@@ -1,0 +1,40 @@
+{
+  "name": "jobcoin",
+  "version": "1.0.0",
+  "description": "Application to add and track jobcoin transactions",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev-server": "node ./src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SwingCoder911/jobcoin.git"
+  },
+  "author": "Andrew Sunada <andrew@andrewsunada.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SwingCoder911/jobcoin/issues"
+  },
+  "homepage": "https://github.com/SwingCoder911/jobcoin#readme",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "circular-json": "^0.5.3",
+    "express": "^4.16.3",
+    "string-template": "^1.0.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^0.28.11",
+    "file-loader": "^1.1.11",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "resolve-url-loader": "^2.3.0",
+    "sass-loader": "^7.0.1",
+    "style-loader": "^0.21.0",
+    "url-loader": "^1.0.1",
+    "webpack": "^4.6.0"
+  }
+}
