@@ -1,0 +1,31 @@
+$main-colour: #ccc;
+$error-colour: #d9534f;
+body, p, ul, h1, h2, h3, h4, h5{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;    
+}
+
+body{
+    color: $main-colour;
+}
+
+input{
+    border: none;
+    border-bottom: 1px solid $main-colour;
+    padding: .25rem 0;
+    text-align: left;
+}
+
+button{
+    border: none;
+    background: $main-colour;
+    padding: .5rem;
+    display: block;
+    color: #FFF;
+    margin: 0;
+}
+
+.error-text{
+    color: $error-colour;
+}

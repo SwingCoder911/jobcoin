@@ -1,0 +1,32 @@
+@import './base/base';
+$header-height: 4rem;
+.header{
+    width: 100%;
+    height: $header-height;
+    overflow: hidden;
+    border-bottom: 1px solid $main-colour;
+    h1{
+        float: left;
+        height: 100%;
+        line-height: $header-height;
+        margin-left: $header-height;
+    }
+    .address-section{
+        float: right;
+        height: 100%;
+        width: 20rem;
+        overflow: hidden;
+        .address-section-item{
+            float: left;
+            margin: 0 1rem;
+        }
+        .address-user-icon{            
+            width: 3rem;
+            height: 3rem;
+            margin-top: .5rem;            
+        }
+        .address-user-link{
+            line-height: $header-height;
+        }
+    }
+}

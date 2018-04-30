@@ -1,7 +1,7 @@
 let express = require('express');
 let path = require('path');
 let bodyParser = require('body-parser');
-let JobCoin = require('./server/jobCoinHandler');
+let JobCoin = require('./server/JobCoin');
 let app = express();
 var publicDir = path.resolve(__dirname, '../public');
 
@@ -9,7 +9,11 @@ let jobCoinHandler = new JobCoin();
 app.use(express.static('public'));
 app.use(bodyParser.json());
 app.get('/', function(req, res){
-    res.sendFile(publicDir + "/index.html");
+    res.sendFile(publicDir + "/signin.html");
+});
+
+app.get('/transactions/:address', function(req, res){
+    res.sendFile(publicDir + "/transactions.html");
 });
 
 app.get('/api/transactions', function(req, res){
@@ -36,6 +40,18 @@ app.get('/api/addresses/:address', function(req, res){
             res
                 .sendStatus(400)
                 .send(error);
+        });    
+});
+
+app.get('/api/validate/:address', function(req, res){
+    let inputAddress = req.params.address;
+    jobCoinHandler.ValidateAddress(inputAddress)
+        .then(result => {
+            res.sendStatus(200);
+        })
+        .catch(error => {
+            console.log("Error: ", error);
+            res.sendStatus(404);
         });    
 });
 

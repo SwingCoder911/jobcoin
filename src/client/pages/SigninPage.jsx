@@ -1,10 +1,11 @@
 import React from "react";
 import ReactDom from "react-dom";
-import App from "./client/components/App";
+import Signin from "../components/Signin";
 
-require('./client/index.html');
+require('../signin.html');
+require('../scss/signin.scss');
 
 ReactDom.render(
-    <App />,
+    <Signin />,
     document.getElementById("root")
 );

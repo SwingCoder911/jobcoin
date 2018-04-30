@@ -1,6 +1,7 @@
 const axios                         = require('axios');
 const stringTemplate                = require('string-template');
 const CircularJSON                  = require('circular-json');
+const Address                       = require('./Address');
 const addressTransactionsListUrl    = "http://jobcoin.gemini.com/childhood/api/addresses/{0}";
 const transactionsUrl               = "http://jobcoin.gemini.com/childhood/api/transactions";
 
@@ -28,7 +29,27 @@ class JobCoin{
                     resolve(result.data);
                 })
                 .catch(error => {
-                    reject(error)
+                    reject(error);
+                })
+        });        
+    }
+    ValidateAddress(inputAddress){
+        return new Promise((resolve, reject) => {
+            if(!inputAddress){
+                return reject("Bad address");
+            }
+            let url = stringTemplate(addressTransactionsListUrl, inputAddress);
+            this.call(url, 'GET')
+                .then(result => {
+                    let address = new Address(result.data);
+                    if(address.Error !== false){
+                        reject(address.Error);
+                        return;
+                    }
+                    resolve(result.data);
+                })
+                .catch(error => {
+                    reject(error);
                 })
         });        
     }
@@ -39,7 +60,7 @@ class JobCoin{
                     resolve(result.data);
                 })
                 .catch(error => {
-                    reject(error)
+                    reject(error);
                 })
         });        
     }

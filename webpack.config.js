@@ -1,8 +1,9 @@
 const path = require('path');
-
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 module.exports = {
   entry: {
-    main: './src/index.jsx'
+    signin: './src/client/pages/SigninPage.jsx',
+    transactions: './src/client/pages/TransactionsPage.jsx'
   },
   output: {
     filename: '[name].js',
@@ -30,7 +31,7 @@ module.exports = {
             loaders: ['style-loader', 'css-loader', 'resolve-url-loader', 'sass-loader']
         },
         {
-            test: /\.(jpe?g|png)$/,
+            test: /\.(jpe?g|png|gif)$/,
             loader: "file-loader?name=[path][name].[ext]"
         },
         {
@@ -52,5 +53,10 @@ module.exports = {
   resolve:{
     extensions: ['.js', '.jsx']
   },
-  mode: "development"
+  mode: "development",
+  plugins:[
+      new CopyWebpackPlugin([
+          {from: 'src/client/images/*', to: "images/", flatten: true}
+      ])
+  ]
 };
