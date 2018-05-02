@@ -20,7 +20,6 @@ export default class TransactionsActionsForm extends Component{
         this.setState({loading: true});
         Api.ExecuteTransaction(this.props.fromAddress, this.state.destinationAddress, this.state.amount)
             .then((result) => {
-                console.log("Execute result: ", result);
                 this.setState({loading: false});
                 this.props.onTransactionSent();
             })
@@ -46,7 +45,6 @@ export default class TransactionsActionsForm extends Component{
     }
     onTransactionSubmitted(){
         this.SubmitTransaction();
-        console.log("Clicked: ", this.state);
     }
     render(){
         return (<div className="transactions-actions-form">

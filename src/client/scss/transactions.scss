@@ -87,6 +87,9 @@ $header-height: 4rem;
             margin-bottom: 0;
         }
     }
+    .error-text{
+        margin-left: ($header-height * .25);
+    }
     input.actions-form-item, button.actions-form-item{
         width: calc(100% - #{$header-height / 2});
     }

@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 
+/**
+ * Handle balance area for transactions
+ */
 export default class TransactionsBalance extends Component{
     constructor(props){
         super(props);

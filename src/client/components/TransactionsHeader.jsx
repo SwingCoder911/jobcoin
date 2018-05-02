@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 
+/**
+ * Header widget that handles header layout and signout link
+ */
+
 export default class TransactionsHeader extends Component{
     constructor(props){
         super(props);

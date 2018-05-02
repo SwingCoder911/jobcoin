@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import Api from "../lib/Api";
 
+/**
+ * This component's job is to handle the form based aspect of the Signin page
+ */
+
 const ENTER_KEY = 13;
 
 export default class SigninForm extends Component{

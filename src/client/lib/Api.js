@@ -1,5 +1,10 @@
 import axios from 'axios';
 const validateAddressUrl = '/api/validate/';
+
+/**
+ * A separate api layer meant to handle all the api callbacks to the server and abstract them into functions for react to call.
+ */
+
 const call = (url, method, formData = null) => {
     let options = { url, method };
     if(formData !== null){

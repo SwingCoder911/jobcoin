@@ -1,5 +1,12 @@
 import React, { Component } from 'react';
 import { LineChart } from 'react-d3-components';
+
+/**
+ * History graph that displays transaction history in a line graph.
+ * This could definitely be made to be more visually consumable and perhaps a tad bit interactive.
+ * This looks terrible with only one datapoint, so maybe we could include a different way to display that data.
+ */
+
 export default class TransactionsHistory extends Component{
     constructor(props){
         super(props);
