@@ -21,6 +21,8 @@
     "axios": "^0.18.0",
     "circular-json": "^0.5.3",
     "express": "^4.16.3",
+    "react-d3-components": "^0.9.1",
+    "react-dom": "^16.3.2",
     "string-template": "^1.0.0"
   },
   "devDependencies": {

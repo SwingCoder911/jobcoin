@@ -30,3 +30,85 @@ $header-height: 4rem;
         }
     }
 }
+
+.transactions-header{
+    padding: ($header-height / 3);
+    text-align: center;
+}
+
+.transaction-main-content{
+    width: 100%;
+    margin-top: $header-height;
+    display: flex;
+
+    .secondary-column{
+        flex: 1;
+        padding: 0 $header-height;
+    }
+
+    .primary-column{
+        flex: 3;
+    }
+   
+}
+
+.transactions-secondary-area{
+    border: 1px solid $main-colour;
+    margin: ($header-height / 2) 0;
+
+    &:first-child{
+        margin-top: 0;
+    }
+
+    .secondary-area-header{
+        border-bottom: 1px solid $main-colour;
+    }
+}
+
+.transactions-balance{
+    .transactions-balance-value{
+        text-align: center;
+        padding: ($header-height * .6) 0;
+    }
+}
+
+.transactions-actions-form{
+    padding: ($header-height / 2);
+
+    .actions-form-item{
+        display: block;
+        margin: ($header-height * .25);
+
+        &:first-child{
+            margin-top: 0;
+        }
+
+        &:last-child{
+            margin-bottom: 0;
+        }
+    }
+    input.actions-form-item, button.actions-form-item{
+        width: calc(100% - #{$header-height / 2});
+    }
+    .loading{
+        width: 2rem;
+        display: block;
+        margin: 0 auto;
+    }
+}
+
+.transactions-history{
+    border: 1px solid $main-colour;
+    margin-right: $header-height;
+    height: 70vh;
+    min-height: 40rem;
+    .transactions-header{
+        text-align: left;
+    }
+
+    .empty-chart{
+        width: 100%;
+        text-align: center;
+        margin-top: #{$header-height * 3};
+    }
+}
